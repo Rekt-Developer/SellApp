@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Storefront</title>
     <style>
-        /* General Styles */
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -14,14 +14,18 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0D0D0D;
-            color: #FFFFFF;
-            line-height: 1.6;
+            background-color: #0d0d0d;
+            color: #fff;
+            overflow-x: hidden;
         }
 
         a {
             text-decoration: none;
             color: inherit;
+        }
+
+        ul {
+            list-style: none;
         }
 
         /* Header */
@@ -30,19 +34,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background-color: #1A1A1A;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             font-size: 1.5rem;
             font-weight: bold;
         }
 
         .logo span {
-            color: #FFD700;
+            color: #ffd700;
             font-size: 2rem;
         }
 
@@ -54,8 +59,8 @@
         nav a {
             font-size: 1rem;
             padding: 8px 16px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         nav a:hover {
@@ -65,12 +70,14 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             background: linear-gradient(90deg, #9b00ff, #ff73a8, #ffa354);
+            color: #fff;
         }
 
         .hero h1 {
             font-size: 3rem;
+            font-weight: bold;
             margin-bottom: 10px;
         }
 
@@ -84,18 +91,18 @@
         .search-bar input {
             width: 60%;
             padding: 12px 20px;
-            font-size: 1rem;
-            border: 2px solid #292929;
             border-radius: 25px;
-            background-color: #1A1A1A;
-            color: #FFFFFF;
+            border: none;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-size: 1rem;
         }
 
         .search-bar input::placeholder {
             color: #888;
         }
 
-        /* Status Indicators */
+        /* Status Indicator */
         .status-indicator {
             display: flex;
             justify-content: center;
@@ -110,15 +117,15 @@
         }
 
         .status-indicator .green {
-            background-color: #00FF00;
+            background-color: #00ff00;
         }
 
         .status-indicator .red {
-            background-color: #FF0000;
+            background-color: #ff0000;
         }
 
         .status-indicator .gray {
-            background-color: #666666;
+            background-color: #666;
         }
 
         /* Product Grid */
@@ -126,15 +133,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 40px;
         }
 
         .product-card {
-            background-color: #1A1A1A;
+            background-color: #1a1a1a;
             border-radius: 8px;
-            padding: 20px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .product-card:hover {
@@ -143,9 +150,8 @@
         }
 
         .product-card img {
-            width: 100%;
-            max-width: 200px;
-            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
         }
 
         .product-card h3 {
@@ -159,21 +165,24 @@
         }
 
         .product-card .stock {
-            color: #888;
             font-size: 0.875rem;
+            color: #888;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #1A1A1A;
+            background-color: #1a1a1a;
             font-size: 0.875rem;
         }
 
         footer a {
-            margin: 0 8px;
-            color: #FFFFFF;
+            color: #fff;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
             text-decoration: underline;
         }
     </style>
@@ -207,28 +216,28 @@
 
     <div class="product-grid">
         <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Small Product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
             <h3>Small Product</h3>
             <p class="price">$99.99</p>
-            <p class="stock">&#8734; in stock</p>
+            <p class="stock">&infin; in stock</p>
         </div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Medium Product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
             <h3>Medium Product</h3>
             <p class="price">$100.00</p>
-            <p class="stock">&#8734; in stock</p>
+            <p class="stock">&infin; in stock</p>
         </div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Large Product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
             <h3>Large Product</h3>
             <p class="price">$101.00</p>
-            <p class="stock">&#8734; in stock</p>
+            <p class="stock">&infin; in stock</p>
         </div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Extra Large Product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
             <h3>Extra Large Product</h3>
             <p class="price">$101.00</p>
-            <p class="stock">&#8734; in stock</p>
+            <p class="stock">&infin; in stock</p>
         </div>
     </div>
 
