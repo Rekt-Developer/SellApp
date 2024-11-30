@@ -1,29 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.getElementById('products-container');
+    const searchInput = document.querySelector('.search-input');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const themeSwitch = document.getElementById('theme-switch');
+
+    // Sample product data
     const products = [
-        { title: 'Small Product', price: 99.99 },
-        { title: 'Medium Product', price: 100.00 },
-        { title: 'Large Product', price: 101.00 },
-        { title: 'Extra Large Product', price: 101.00 }
+        { id: 1, name: 'Digital Marketing Course', price: 99.99, image: 'https://example.com/product1.jpg' },
+        { id: 2, name: 'Web Development Bootcamp', price: 149.99, image: 'https://example.com/product2.jpg' },
+        { id: 3, name: 'Graphic Design Masterclass', price: 79.99, image: 'https://example.com/product3.jpg' },
+        { id: 4, name: 'Data Science Fundamentals', price: 129.99, image: 'https://example.com/product4.jpg' },
+        { id: 5, name: 'Mobile App Development Course', price: 89.99, image: 'https://example.com/product5.jpg' },
     ];
 
-    const imageUrl = 'IMG_3999.png';
+    // Function to render product cards
+    function renderProducts(productsToRender) {
+        productsContainer.innerHTML = '';
+        productsToRender.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('product-card');
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">${product.name}</h3>
+                    <p class="product-price">$${product.price.toFixed(2)}</p>
+                </div>
+            `;
+            productsContainer.appendChild(productCard);
+        });
+    }
 
-    products.forEach(product => {
-        const productCard = document.createElement('article');
-        productCard.className = 'product-card';
-        productCard.innerHTML = `
-            <div class="product-image">
-                <img src="${imageUrl}" alt="${product.title}" loading="lazy">
-            </div>
-            <h2 class="product-title">${product.title}</h2>
-            <p class="product-price">$${product.price.toFixed(2)}</p>
-            <p class="product-stock">∞ in stock</p>
-        `;
-        productsContainer.appendChild(productCard);
+    // Initial render
+    renderProducts(products);
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredProducts = products.filter(product => 
+            product.name.toLowerCase().includes(searchTerm)
+        );
+        renderProducts(filteredProducts);
     });
 
-    // Add smooth scroll behavior for navigation
+    // Mobile navigation toggle
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -33,54 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Implement a simple search functionality
-    const searchInput = document.querySelector('.search-input');
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const productCards = document.querySelectorAll('.product-card');
-        productCards.forEach(card => {
-            const title = card.querySelector('.product-title').textContent.toLowerCase();
-            if (title.includes(searchTerm)) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+    // Theme toggle functionality
+    themeSwitch.addEventListener('change', () => {
+        document.body.classList.toggle('dark-mode');
     });
-
-    // Implement a simple dark/light mode toggle
-    const body = document.body;
-    const toggleDarkMode = () => {
-        body.classList.toggle('light-mode');
-    };
-
-    // Create a button for dark/light mode toggle
-    const modeToggle = document.createElement('button');
-    modeToggle.innerText = 'Toggle Light/Dark Mode';
-    modeToggle.style.position = 'fixed';
-    modeToggle.style.bottom = '20px';
-    modeToggle.style.right = '20px';
-    modeToggle.style.padding = '10px';
-    modeToggle.style.backgroundColor = 'var(--accent-yellow)';
-    modeToggle.style.color = 'var(--background)';
-    modeToggle.style.border = 'none';
-    modeToggle.style.borderRadius = '5px';
-    modeToggle.style.cursor = 'pointer';
-    modeToggle.addEventListener('click', toggleDarkMode);
-    body.appendChild(modeToggle);
-
-    // Implement a simple lazy loading for images
-    const lazyLoadImages = () => {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-            if (img.getBoundingClientRect().top < window.innerHeight) {
-                img.src = img.dataset.src;
-                img.removeAttribute('loading');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', lazyLoadImages);
-    window.addEventListener('resize', lazyLoadImages);
-    lazyLoadImages();
 });
+
