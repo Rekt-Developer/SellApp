@@ -7,28 +7,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sample product data
     const products = [
-        { id: 1, name: 'Digital Marketing Course', price: 99.99, image: 'IMG_3999.png' },
-        { id: 2, name: 'Web Development Bootcamp', price: 149.99, image: 'IMG_3999.png' },
-        { id: 3, name: 'Graphic Design Masterclass', price: 79.99, image: 'IMG_3999.png' },
-        { id: 4, name: 'Data Science Fundamentals', price: 129.99, image: 'IMG_3999.png' },
-        { id: 5, name: 'Mobile App Development Course', price: 89.99, image: 'IMG_3999.png' },
+        { id: 1, name: 'Bitcoin Flash Tool V6.5.1', price: 250.00, image: 'https://storage.sell.app/store/49175/listings/hs9KNLIrVKmiqK9GExzjpk5vwbuWfV2th7Iq6YAn.jpg' },
+        { id: 2, name: 'Flash Miner for Windows', price: 100.00, image: 'https://storage.sell.app/store/49175/listings/5jHYcH7r0Pcr1Pp8yjWlSNHLdM7bl9yystNCuCQO.webp' },
+        { id: 3, name: 'Flash USDT Full Package', price: 300.00, image: 'https://storage.sell.app/store/49175/listings/kcdSyWdCFmRyYU86U7CqDyUO9oCk9JYWYzVvyXID.png' },
+        { id: 4, name: 'Metamusk Crypto Drainer', price: 200.00, image: 'https://www.cryptounitoffice.com/images/metamask.png' },
+        { id: 5, name: 'Angel Drainer', price: 150.00, image: 'https://defi-planet.com/wp-content/uploads/2024/07/Crypto-Malware-Angel-Drainer-Reportedly-Shuts-Down-Following-Identification-of-Developers.jpeg' },
+        { id: 6, name: 'SeedSigner', price: 50.00, image: 'https://bitcoiner.guide/assets/img/SeedSigner.png' },
     ];
 
     // Function to render product cards
     function renderProducts(productsToRender) {
-        productsContainer.innerHTML = '';
-        productsToRender.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.classList.add('product-card');
-            productCard.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-title">${product.name}</h3>
-                    <p class="product-price">$${product.price.toFixed(2)}</p>
-                </div>
-            `;
-            productsContainer.appendChild(productCard);
-        });
+        productsContainer.innerHTML = ''; // Clear previous products
+        if (productsToRender.length === 0) {
+            productsContainer.innerHTML = '<p class="no-results">No products found.</p>';
+        } else {
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card');
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                    </div>
+                `;
+                productsContainer.appendChild(productCard);
+            });
+        }
     }
 
     // Initial render
@@ -64,4 +69,3 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('dark-mode');
     });
 });
-
