@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { title: 'Extra Large Product', price: 101.00 }
     ];
 
-    const imageUrl = 'https://defaultdark.sell.app/_next/static/media/placeholder.734bf396.webp';
+    const imageUrl = 'IMG_3999.png';
 
     products.forEach(product => {
         const productCard = document.createElement('article');
