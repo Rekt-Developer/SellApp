@@ -56,16 +56,18 @@
             SellApp
         </a>
         <nav class="nav">
-            <a href="#products" class="nav-link"><span>Products</span></a>
-            <a href="#support" class="nav-link"><span>Support</span></a>
-            <a href="#feedback" class="nav-link"><span>Feedback</span></a>
-            <a href="#login" class="nav-link"><span>Login</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#products" class="nav-link"><span>Products</span></a></li>
+                <li><a href="#support" class="nav-link"><span>Support</span></a></li>
+                <li><a href="#feedback" class="nav-link"><span>Feedback</span></a></li>
+                <li><a href="#login" class="nav-link"><span>Login</span></a></li>
+            </ul>
         </nav>
-        <button id="menu-toggle" aria-label="Toggle menu" class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </header>
 
     <main>
@@ -94,6 +96,18 @@
         <section class="products-grid" aria-label="Products" id="products-container">
             <!-- Product cards will be dynamically inserted here -->
         </section>
+
+        <section id="support" class="support-section">
+            <h2>Support</h2>
+            <p>Need help? Contact our support team.</p>
+            <a href="#" class="btn">Contact Support</a>
+        </section>
+
+        <section id="feedback" class="feedback-section">
+            <h2>Feedback</h2>
+            <p>We value your opinion. Share your thoughts with us.</p>
+            <a href="#" class="btn">Give Feedback</a>
+        </section>
     </main>
 
     <footer class="footer">
@@ -102,13 +116,17 @@
             <a href="/terms" class="footer-link">Terms</a> &bull; 
             <a href="/privacy" class="footer-link">Privacy</a>
         </p>
+        <div class="theme-toggle">
+            <label for="theme-switch" class="switch">
+                <input type="checkbox" id="theme-switch">
+                <span class="slider round"></span>
+            </label>
+            <span>Dark Mode</span>
+        </div>
     </footer>
-
-    <button id="theme-toggle" aria-label="Toggle light/dark theme" class="theme-toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-    </button>
 
     <!-- Internal JS -->
     <script src="script.js"></script>
 </body>
 </html>
+
