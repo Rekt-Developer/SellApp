@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sample product data
     const products = [
-        { id: 1, name: 'Digital Marketing Course', price: 99.99, image: 'https://example.com/product1.jpg' },
-        { id: 2, name: 'Web Development Bootcamp', price: 149.99, image: 'https://example.com/product2.jpg' },
-        { id: 3, name: 'Graphic Design Masterclass', price: 79.99, image: 'https://example.com/product3.jpg' },
-        { id: 4, name: 'Data Science Fundamentals', price: 129.99, image: 'https://example.com/product4.jpg' },
-        { id: 5, name: 'Mobile App Development Course', price: 89.99, image: 'https://example.com/product5.jpg' },
+        { id: 1, name: 'Digital Marketing Course', price: 99.99, image: 'IMG_3999.png' },
+        { id: 2, name: 'Web Development Bootcamp', price: 149.99, image: 'IMG_3999.png' },
+        { id: 3, name: 'Graphic Design Masterclass', price: 79.99, image: 'IMG_3999.png' },
+        { id: 4, name: 'Data Science Fundamentals', price: 129.99, image: 'IMG_3999.png' },
+        { id: 5, name: 'Mobile App Development Course', price: 89.99, image: 'IMG_3999.png' },
     ];
 
     // Function to render product cards
