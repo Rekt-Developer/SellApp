@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SellApp Admin - Manage Your Digital Marketplace</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SellApp Admin: Manage your digital marketplace with ease. Add, edit, and remove products, view analytics, and more.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- External CSS Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header class="admin-header">
+        <a href="/admin" class="admin-logo">SellApp Admin</a>
+        <nav class="admin-nav">
+            <a href="#dashboard" class="admin-nav-link">Dashboard</a>
+            <a href="#products" class="admin-nav-link">Products</a>
+            <a href="#orders" class="admin-nav-link">Orders</a>
+            <a href="#analytics" class="admin-nav-link">Analytics</a>
+            <a href="#settings" class="admin-nav-link">Settings</a>
+            <a href="#logout" class="admin-nav-link">Logout</a>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        <section id="dashboard" class="admin-section">
+            <h1>Dashboard</h1>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3>Total Sales</h3>
+                    <p class="stat-value">$10,245.67</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Orders</h3>
+                    <p class="stat-value">152</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Products</h3>
+                    <p class="stat-value">25</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Customers</h3>
+                    <p class="stat-value">1,234</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="admin-section">
+            <h2>Products</h2>
+            <button id="add-product" class="admin-btn">Add New Product</button>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <!-- Product rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="orders" class="admin-section">
+            <h2>Orders</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="order-list">
+                    <!-- Order rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="analytics" class="admin-section">
+            <h2>Analytics</h2>
+            <div id="sales-chart" class="chart"></div>
+            <div id="top-products-chart" class="chart"></div>
+        </section>
+
+        <section id="settings" class="admin-section">
+            <h2>Settings</h2>
+            <form id="settings-form" class="admin-form">
+                <div class="form-group">
+                    <label for="site-name">Site Name</label>
+                    <input type="text" id="site-name" name="site-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="currency">Currency</label>
+                    <select id="currency" name="currency">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="theme">Theme</label>
+                    <select id="theme" name="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <button type="submit" class="admin-btn">Save Settings</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="admin-footer">
+        <p>&copy; 2023 SellApp. All rights reserved.</p>
+    </footer>
+
+    <!-- Internal JS -->
+    <script src="admin.js"></script>
+</body>
+</html>
+
